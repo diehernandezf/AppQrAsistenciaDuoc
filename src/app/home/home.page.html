@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      QrAsistencia
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="titulo">
+    <ion-title class="bienvenido">Bienvenido!</ion-title>
+    </div>
+
+    <div class="userSelection">
+      <ion-button (click)="goLoginDocente()">Ingresar como docente</ion-button>
+      <br>
+      <ion-button class="alumnoBtn" (click)="goLoginAlumno()">Ingresar como alumno</ion-button>
+    </div>
+</ion-content>
