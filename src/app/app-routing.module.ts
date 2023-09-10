@@ -12,12 +12,28 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'home/:user',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
     path: 'docente-page',
     loadChildren: () => import('./docente-page/docente-page.module').then( m => m.DocentePagePageModule)
   },
   {
     path: 'alumno-page',
     loadChildren: () => import('./alumno-page/alumno-page.module').then( m => m.AlumnoPagePageModule)
+  },
+  {
+    path: 'generador-qrd',
+    loadChildren: () => import('./generador-qrd/generador-qrd.module').then( m => m.GeneradorQrdPageModule)
+  },
+  {
+    path: 'leer-qr-alumno',
+    loadChildren: () => import('./leer-qr-alumno/leer-qr-alumno.module').then( m => m.LeerQrAlumnoPageModule)
+  },
+  {
+    path: 'alumno-registrado',
+    loadChildren: () => import('./alumno-registrado/alumno-registrado.module').then( m => m.AlumnoRegistradoPageModule)
   },
 ];
 
