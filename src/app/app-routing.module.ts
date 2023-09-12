@@ -35,6 +35,15 @@ const routes: Routes = [
     path: 'alumno-registrado',
     loadChildren: () => import('./alumno-registrado/alumno-registrado.module').then( m => m.AlumnoRegistradoPageModule)
   },
+  {
+    path: 'recuperar-password-page',
+    loadChildren: () => import('./recuperar-password-page/recuperar-password-page.module').then( m => m.RecuperarPasswordPagePageModule)
+  },  {
+    path: 'recuperar-contrasena-docente',
+    loadChildren: () => import('./recuperar-contrasena-docente/recuperar-contrasena-docente.module').then( m => m.RecuperarContrasenaDocentePageModule)
+  },
+
+
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AlumnoPagePage } from './alumno-page.page';
+import { AlumnoPagePage } from './alumno-page.page'; // Asegúrate de que la ruta sea correcta
 
 describe('AlumnoPagePage', () => {
   let component: AlumnoPagePage;

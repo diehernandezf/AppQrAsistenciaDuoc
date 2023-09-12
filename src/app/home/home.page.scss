@@ -21,3 +21,66 @@
 .alumnoBtn{
   margin-top: 15px;
 }
+
+/* inicio animacion*/
+.titulo {
+  text-align: center;
+}
+
+.bienvenido {
+  animation: moveTitle 5s infinite, fadeOpacity 1s infinite;
+  opacity: 1;
+}
+
+@keyframes moveTitle {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(50%);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    opacity: 0.2;
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOpacity {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+
+/* fin animacion*/
+
+/* Estilo para el título "RegistrAPP" */
+ion-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Animación de desvanecimiento */
+.fade-out {
+  animation: fadeOut 2s ease-in-out;
+  opacity: 0;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
