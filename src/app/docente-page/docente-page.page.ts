@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder
+} from '@angular/forms';
+import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -7,14 +14,46 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./docente-page.page.scss'],
 })
 export class DocentePagePage implements OnInit {
+  nombre = 'nombre';
+  apellido = 'apellido';
+  isCleaning = false;
 
-  constructor(private navCtrl: NavController) { }
+  formulario = this.fb.group({
+    nombre: ['',[Validators.required]],
+    contrasenia: ['', [Validators.required]],
+  });
+
+  constructor(
+    private router: Router,
+    private navCtrl: NavController,
+    private fb: FormBuilder
+  ) {}
+
+  recuperarContrasena() {
+    // Aquí puedes realizar cualquier lógica adicional necesaria antes de la redirección
+
+    // Luego, redirigir al usuario a la página "RecuperarPassword_page"
+    this.router.navigate(['/recuperar-password-page']);
+  }
+
+  goBack() {
+    this.router.navigate(['/']);
+  }
+
 
   ngOnInit() {
   }
 
-  goDocenteQr(){
-    this.navCtrl.navigateForward('/generador-qrd')
+  goGeneradorQr(){
+    const userValue = this.formulario.get('nombre')?.value;
+    this.navCtrl.navigateRoot(`/generador-qrd/${userValue}`);
   }
 
+  limpiarFormulario(){
+    this.isCleaning = true;
+    setTimeout(() => {
+      this.formulario.reset();
+      this.isCleaning = false;
+    }, 1000);
+  }
 }

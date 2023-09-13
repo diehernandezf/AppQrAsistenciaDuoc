@@ -1,39 +1,54 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="dark">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title class="custom-title">RegistrAPP</ion-title>
+      </ion-buttons>
+    <ion-title>RegistrAPP</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="custom-content">
+<ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar color="dark">
+    <ion-toolbar>
       <ion-title size="large">DocentePage</ion-title>
     </ion-toolbar>
   </ion-header>
 </ion-content>
 
 <ion-content>
-  <ion-card class="cardLogin">
+  <ion-card>
     <ion-card-header>
-      <ion-card-title class="cardTitle">Indique sus credenciales</ion-card-title>
+      <ion-title>Iniciar Sesión</ion-title>
     </ion-card-header>
-  
+
     <ion-card-content>
-      <form>
+      <form [formGroup]="formulario">
         <ion-item>
-          <ion-label position="floating">Usuario</ion-label>
-          <ion-input placeholder="Ingrese nombre"></ion-input>
+          <ion-label position="floating">Nombre de Usuario</ion-label>
+          <ion-input formControlName="nombre" [class.animacionInput]="isCleaning" type="text" placeholder="Ingresar usuario"></ion-input>
         </ion-item>
+        <ion-label color="danger" *ngIf="formulario.controls.nombre.hasError('required') && formulario.controls.nombre.touched">* El nombre es obligatorio</ion-label>
+        
         <ion-item>
           <ion-label position="floating">Contraseña</ion-label>
-          <ion-input type="password" placeholder="Ingrese contraseña"></ion-input>
+          <ion-input formControlName="contrasenia" [class.animacionInput]="isCleaning" type="password" placeholder="Ingresar contraseña"></ion-input>
         </ion-item>
-      </form>
-      <ion-button (click)="goDocenteQr()" shape="round" color="success" class="btnIngresar">Ingresar</ion-button>
-      <ion-button fill="clear" shape="round" color="warning" class="btnRecuperarContraseña">Recuperar contraseña</ion-button>
+        <ion-label color="danger" *ngIf="formulario.controls.contrasenia.hasError('required') && formulario.controls.contrasenia.touched">* La contraseña es obligatoria</ion-label>
+        </form>
+      <br>
+      <ion-button (click)="goGeneradorQr()" [disabled]="!formulario.valid" expand="full" shape="round" color="primary">
+        INGRESAR
+      </ion-button>
+
+      <!-- Agregar enlace para "Recuperar Contraseña" -->
+      <ion-button expand="full" shape="round" color="tertiary" (click)="recuperarContrasena()">
+        Recuperar Contraseña
+      </ion-button>
+
+      <!-- Botón para limpiar campos -->
+      <ion-button expand="full" shape="round" color="secondary" (click)="limpiarFormulario">
+        LIMPIAR CAMPOS
+      </ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

@@ -24,7 +24,7 @@ const routes: Routes = [
     loadChildren: () => import('./alumno-page/alumno-page.module').then( m => m.AlumnoPagePageModule)
   },
   {
-    path: 'generador-qrd',
+    path: 'generador-qrd/:userValue',
     loadChildren: () => import('./generador-qrd/generador-qrd.module').then( m => m.GeneradorQrdPageModule)
   },
   {
@@ -38,7 +38,8 @@ const routes: Routes = [
   {
     path: 'recuperar-password-page',
     loadChildren: () => import('./recuperar-password-page/recuperar-password-page.module').then( m => m.RecuperarPasswordPagePageModule)
-  },  {
+  },
+  {
     path: 'recuperar-contrasena-docente',
     loadChildren: () => import('./recuperar-contrasena-docente/recuperar-contrasena-docente.module').then( m => m.RecuperarContrasenaDocentePageModule)
   },

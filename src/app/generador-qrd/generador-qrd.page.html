@@ -4,16 +4,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">generadorQrd</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
-
 <ion-content>
+<div>
+  <ion-title class="ion-text-center bienvenido">Bienvenido</ion-title>
+  <p class="ion-text-center user">{{ userValue }}</p>
+</div>
+
   <div class="contenedorIniciarClase">
-  <ion-button>Iniciar clase</ion-button>
+  <ion-button>Scannear QR</ion-button>
     </div>
 </ion-content>
