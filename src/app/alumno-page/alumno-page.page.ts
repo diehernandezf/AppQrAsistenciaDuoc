@@ -46,10 +46,12 @@ export class AlumnoPagePage {
     this.router.navigate(['/']);
   }
 
-  goGeneradorQr(){
+  goGeneradorQr() {
     const userValue = this.formulario.get('nombre')?.value;
-    this.navCtrl.navigateRoot(`/generador-qrd/${userValue}`);
+    this.navCtrl.navigateRoot(`/leer-qr-alumno/${userValue}`);
   }
+  
+  
 
   limpiarFormulario(){
     this.isCleaning = true;

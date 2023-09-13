@@ -19,7 +19,7 @@ export class DocentePagePage implements OnInit {
   isCleaning = false;
 
   formulario = this.fb.group({
-    nombre: ['',[Validators.required]],
+    nombre: ['', [Validators.required]],
     contrasenia: ['', [Validators.required]],
   });
 
@@ -40,19 +40,20 @@ export class DocentePagePage implements OnInit {
     this.router.navigate(['/']);
   }
 
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-  goGeneradorQr(){
+  goGeneradorQr() {
     const userValue = this.formulario.get('nombre')?.value;
     this.navCtrl.navigateRoot(`/generador-qrd/${userValue}`);
   }
 
-  limpiarFormulario(){
+  limpiarFormulario() {
     this.isCleaning = true;
     setTimeout(() => {
-      this.formulario.reset();
+      this.formulario.reset({
+        nombre: '', // Establece el valor inicial para el campo "nombre"
+        contrasenia: '', // Establece el valor inicial para el campo "contrasenia"
+      });
       this.isCleaning = false;
     }, 1000);
   }

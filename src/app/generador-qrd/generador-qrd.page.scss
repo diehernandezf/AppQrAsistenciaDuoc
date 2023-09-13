@@ -1,5 +1,24 @@
-.contenedorIniciarClase {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
+ion-title.custom-title {
+    font-size: 24px;
+  }
+  
+  .welcome-container {
+    margin-top: 20px;
+  }
+  
+  ion-title.welcome-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333; /* Color de texto personalizado */
+  }
+  
+  p.user {
+    font-size: 18px;
+    color: #333; /* Color de texto personalizado */
+    margin-top: 10px;
+  }
+  
+  .scan-button-container {
+    margin-top: 20px;
+  }
+  
