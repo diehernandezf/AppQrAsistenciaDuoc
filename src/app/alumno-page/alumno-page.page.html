@@ -1,45 +1,45 @@
 <ion-content [fullscreen]="true" class="ion-padding">
   <ion-header [translucent]="true">
-    <ion-toolbar>
+    <ion-toolbar color="dark">
       <ion-buttons slot="start">
         <!-- Botón de retroceso personalizado -->
-        <ion-button (click)="goBack()">
+        <ion-button (click)="goBack()" color="light">
           <ion-icon name="arrow-back"></ion-icon>
         </ion-button>
       </ion-buttons>
-      <ion-title>RegistrAPP</ion-title>
+      <ion-title class="custom-title">Registr<span class="animated-text">App</span></ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-card>
+  <ion-card class="cardLogin">
     <ion-card-header>
-      <ion-title>Iniciar Sesión</ion-title>
+      <ion-title class="cardTitle">Iniciar Sesión</ion-title>
     </ion-card-header>
 
     <ion-card-content>
       <ion-list lines="full" class="ion-no-margin">
         <ion-item>
-          <ion-label position="floating">Nombre de Usuario</ion-label>
+          <ion-label position="floating" class="custom-label">Nombre de Usuario</ion-label>
           <ion-input type="text" [(ngModel)]="username" name="username" (ionChange)="validarCampos()"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
+          <ion-label position="floating" class="custom-label">Contraseña</ion-label>
           <ion-input type="password" [(ngModel)]="password" name="password" (ionChange)="validarCampos()"></ion-input>
         </ion-item>
       </ion-list>
 
-      <ion-button expand="full" shape="round" color="primary" (click)="ingresar()">
+      <ion-button expand="full" shape="round" color="success" class="custom-button" (click)="ingresar()">
         INGRESAR
       </ion-button>
 
       <!-- Agregar enlace para "Recuperar Contraseña" -->
-      <ion-button expand="full" shape="round" color="tertiary" (click)="recuperarContrasena()">
+      <ion-button expand="full" shape="round" color="warning" class="custom-button" (click)="recuperarContrasena()">
         Recuperar Contraseña
       </ion-button>
 
       <!-- Botón para limpiar campos -->
-      <ion-button expand="full" shape="round" color="secondary" (click)="limpiarCampos()">
+      <ion-button expand="full" shape="round" color="danger" class="custom-button" (click)="limpiarCampos()">
         LIMPIAR CAMPOS
       </ion-button>
     </ion-card-content>

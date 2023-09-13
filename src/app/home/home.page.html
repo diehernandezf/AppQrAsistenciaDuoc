@@ -1,22 +1,19 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      RegistrAPP
+  <ion-toolbar color="dark">
+    <ion-title class="custom-title">
+      <span class="animated-text">Registr<span class="highlight">App</span></span>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-  </ion-header>
-
-  <div class="titulo">
-    <ion-title class="bienvenido">Bienvenido!</ion-title>
-  </div>
-
-  <div class="userSelection">
-    <ion-button (click)="goLoginDocente()">Ingresar como docente</ion-button>
-    <br>
-    <ion-button class="alumnoBtn" (click)="goLoginAlumno()">Ingresar como alumno</ion-button>
+<ion-content [fullscreen]="true" class="custom-content">
+  <div class="content-container">
+    <div class="bienvenido-container">
+      <ion-title class="bienvenido">¡Bienvenido!</ion-title>
+    </div>
+    <div class="userSelection">
+      <ion-button expand="full" (click)="goLoginDocente()" color="success" class="custom-button">Ingresar como docente</ion-button>
+      <ion-button expand="full" (click)="goLoginAlumno()" color="warning" class="custom-button">Ingresar como alumno</ion-button>
+    </div>
   </div>
 </ion-content>

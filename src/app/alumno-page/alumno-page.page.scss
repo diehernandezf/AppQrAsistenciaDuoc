@@ -1,0 +1,41 @@
+/* Estilos para el título "Iniciar Sesión" */
+.cardTitle {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #000; /* Cambia el color del texto según tus preferencias */
+    margin-top: 20px;
+    animation: moveTitle 5s infinite, fadeOpacity 1s infinite;
+    opacity: 1;
+  }
+  
+  @keyframes moveTitle {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(50%);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translateX(0);
+    }
+    75% {
+      opacity: 0.2;
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeOpacity {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+  }
+  
+  
