@@ -43,6 +43,11 @@ const routes: Routes = [
     path: 'recuperar-contrasena-docente',
     loadChildren: () => import('./recuperar-contrasena-docente/recuperar-contrasena-docente.module').then( m => m.RecuperarContrasenaDocentePageModule)
   },
+  {
+    path: 'generar-qr',
+    loadChildren: () => import('./generar-qr/generar-qr.module').then( m => m.GenerarQrPageModule)
+  },
+
 
 
 ];
